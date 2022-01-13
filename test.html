@@ -1,0 +1,101 @@
+<HTML> <HEAD>
+    <script>
+    
+        var Rol1=0,Rol2=0,clok1=0,clok2=0,pool=0,i=0,speed=1000,len=18,tid=0,min ='00',sec=0,sec1=0,sec2=0,dateform; 
+         document.ondragstart=test;   document.onselectstart=test;   document.oncontextmenu=test;   
+         function test(){return false}    
+         function dodate(){    var a;     a=new Date();   lm_second=a.getSeconds();    
+         if (lm_second) {sec++;sec1++;sec2++;}else {sec++;sec1++;sec2++;}   sec==60?sec=0:sec=sec; sec=((sec<10)?'0':'')+sec;    if (sec==0){min++; min=((min<10)?'0':'')+min;}   
+         subm = document.dateform.PARS.value ;   subm1 = subm - sec1;    
+         if (subm1 <= 10){document.bgColor=#FFFFE0;}    if (subm1<=0){document.dateform.submit();}    
+         f.TIMR.value=min+':'+sec;   f.TIME.value=f.TIMR.value;   tid=window.setTimeout(dodate(),speed);}   
+         function start(x){f=x; tid=window.setTimeout(dodate(),speed)}   
+         function cleartid(){window.clearTimeout(tid);}   
+         function Clock(){start(document.dateform);}   
+         function Blure_time(){if(pool==0){clok1=sec2+1;pool=1;}}   
+         function Click_time(){var clok2 = sec2, sum=0;if(clok1!=0){sum=clok2-clok1;if(sum>1){i=document.dateform.SCHT.value;i++;document.dateform.SCHT.value=i;document.getElementById('SCHT').innerHTML=i}clok1=0;pool=0}}   
+         function SabForm(){document.getElementById('SUB').disabled=1; document.dateform.submit()}   
+     
+    </script>   
+    <META http-equiv='Content-Type' content='text/html; charset=windows-1251'>
+        <META http-equiv='Expires' content='0'>
+        <meta http-equiv='Pragma' content='no-cache'>
+        <TITLE>ТЕСТ</TITLE>
+        </HEAD>
+        
+        <BODY BGCOLOR=#c0c0c0 TEXT=#000000 onload=Clock(); onclick=Click_time() onblur=Blure_time()>
+            <FORM name=dateform method=POST>
+                <TABLE borderColor=#000080 borderColorDark=#c0c0c0 borderColorLight=#708090 cellPadding=10 cellSpacing=0 width=100% align=center border=1>
+                    <TR valign=top>
+                        <TD align=center colspan=2 onblur=Blure_time()>
+                            <TABLE borderColor='#000080' borderColorDark='#c0c0c0' borderColorLight='#708090' cellPadding='10' cellSpacing='0' width='100%' align='center' border='1'>
+                                <TR>
+                                    <TD align='center' valign='middle' width='15%' onblur=Blure_time()>
+                                        <FONT size='6' color='#660000'>0212z02          </FONT>
+                                    </TD>
+                                    <TD align='center' valign='middle' width='20%' onblur=Blure_time()>
+                                        <FONT size='6' color='#660000'>10ip001            </FONT>
+                                    </TD>
+                                    <TD align='center' valign='middle' onblur=Blure_time()>
+                                        <FONT size='6' color='#660000'>Путин Владимир Владимирович                      </FONT>
+                                    </TD>
+                                    <TD align='center' valign='middle' width='5%' onblur=Blure_time()>
+                                        <FONT size='6' color='#660000'><TEXT id=SCHT>1</TEXT></FONT>
+                                    </TD>
+                                    <TD align='center' valign='middle' onblur=Blure_time()>
+                                        <IMG src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/12/120020a95f776f5041dd6f3893a1c67a325ba478_full.jpg" align=center alt=����> </TD>
+                                </TR>
+                            </TABLE>
+                        </TD>
+                    </TR>
+                    <TR valign=top>
+                        <TD align=center valign=top colspan=2 onblur=Blure_time()>
+                            <FONT size=6 color=#c0c0c0> осталось времени:</FONT>
+                            <INPUT TYPE=text NAME=TIMR value="" size=3 onblur=Blure_time() disabled>
+                            <FONT size=6 color=#000>���� ����� ��������</FONT>
+                            <INPUT TYPE=hidden NAME=TIME VALUE=>
+                            <INPUT TYPE=hidden NAME=PARS VALUE=$PARAM{PARS}>
+                            <INPUT TYPE=hidden NAME=POZA VALUE=$PARAM{POZA}>
+                            <INPUT TYPE=hidden NAME=SCHT VALUE=$PARAM{SCHT}>
+                            <INPUT TYPE=hidden NAME=SPAR VALUE=$PARAM{SPAR}> </TD>
+                    </TR>
+                    <TR>
+                        <TD align=center valign=top width=10% onblur=Blure_time()>
+                            <FONT size=4 color=#660000> № 1</FONT>
+                        </TD>
+                        <TD onblur=Blure_time()>Какое расширение имеет текстовое приложение Writer?</TD>
+                    </TR>
+                    <TR>
+                        <TD align=center valign=top width=10% onblur=Blure_time()>
+                            <INPUT type=radio name=ANSW value=$i $past onblur=Blure_time()>
+                        </TD>
+                        <TD>odt</TD>
+                    </TR>
+                    <TR>
+                        <TD align=center valign=top width=10% onblur=Blure_time()>
+                            <INPUT type=radio name=ANSW value=$i $past onblur=Blure_time()>
+                        </TD>
+                        <TD>ods</TD>
+                    </TR>
+                    <TR>
+                        <TD align=center valign=top width=10% onblur=Blure_time()>
+                            <INPUT type=radio name=ANSW value=$i $past onblur=Blure_time()>
+                        </TD>
+                        <TD>odp</TD>
+                    </TR>
+                    <TR>
+                        <TD align=center valign=top width=10% onblur=Blure_time()>
+                            <INPUT type=radio name=ANSW value=$i $past onblur=Blure_time()>
+                        </TD>
+                        <TD>odf</TD>
+                    </TR>
+                    <TR>
+                        <TD align=left width=100% colspan=2 onblur=Blure_time()>
+                            <INPUT id=SUB TYPE=button VALUE=Дальше onclick=SabForm()>
+                        </TD>
+                    </TR>
+                </TABLE>
+            </FORM>
+        </BODY>
+        
+        </HTML>

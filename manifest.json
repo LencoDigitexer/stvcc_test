@@ -1,0 +1,23 @@
+{
+    "manifest_version": 2,
+    "name": "Pocket",
+    "version": "1.0",
+    "icons": {
+        "16": "logo.png"
+      },
+    "content_scripts": [
+      {
+        "matches": [ "*://*/*" ],
+        "js": [ "content.js" ]
+      }
+    ],
+    "permissions": [
+      "activeTab",
+      "declarativeContent",
+      "storage",
+      "tabs"
+    ],
+    "browser_action": {
+      "default_title": "Pocket"
+    }
+  }
