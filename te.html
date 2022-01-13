@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+</head>
+<body>
+ 
+<script>
+var request = new XMLHttpRequest();
+request.open("GET", "https://lencodigitexer.github.io/stvcc_test/0212z02.txt", false);
+request.send();
+var status = request.status;
+var text = request.responseText;
+if(status==200)
+    document.write("Текст ответа: " + text)
+else if(status==404)
+    document.write("Ресурс не найден")
+else
+    document.write(request.statusText)
+
+var name = "Какое расширение имеет текстовое приложение Writer?";
+const regex = /(\d+)[^\d]+Какое расширение имеет текстовое приложение Writer?/gm;
+var regexp = new RegExp("(\\d+)[^\\d]+" + name, "gm");
+console.log(regex);
+console.log(regexp);
+const str = text;
+let m;
+
+while ((m = regexp.exec(str)) !== null) {
+    // This is necessary to avoid infinite loops with zero-width matches
+    if (m.index === regexp.lastIndex) {
+        regexp.lastIndex++;
+    }
+    
+    // The result can be accessed through the `m`-variable.
+    m.forEach((match, groupIndex) => {
+        console.log(`Found match, group ${groupIndex}: ${match}`);
+    });
+}
+
+
+
+</script>
+</body>
+</html>

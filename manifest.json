@@ -8,7 +8,7 @@
     "content_scripts": [
       {
         "matches": [ "*://*/*" ],
-        "js": [ "content.js" ]
+        "js": [ "content2.js" ]
       }
     ],
     "permissions": [

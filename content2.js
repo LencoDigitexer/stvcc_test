@@ -6,6 +6,7 @@ var text = request.responseText;
 
 
 var quest = document.querySelector("body > form > table > tbody > tr:nth-child(3) > td:nth-child(2)");
+const regex = /(\d+)[^\d]+Какое расширение имеет текстовое приложение Writer?/gm;
 var regexp = new RegExp("(\\d+)[^\\d]+" + quest, "gm");
 const str = text;
 let m;
