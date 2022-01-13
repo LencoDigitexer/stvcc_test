@@ -25,6 +25,7 @@ console.log(regex);
 console.log(regexp);
 const str = text;
 let m;
+var typeAnswer = 0;
 
 while ((m = regexp.exec(str)) !== null) {
     // This is necessary to avoid infinite loops with zero-width matches
@@ -35,9 +36,17 @@ while ((m = regexp.exec(str)) !== null) {
     // The result can be accessed through the `m`-variable.
     m.forEach((match, groupIndex) => {
         console.log(`Found match, group ${groupIndex}: ${match}`);
+        typeAnswer = match;
     });
 }
+if(typeAnswer == 3){ // если типо вопроса 3, то ответ это первая строка после вопроса
+    var answer = /Какое расширение имеет текстовое приложение Writer?.*\n(.*)/gm;
+    console.log(answer);
+    var answer = new RegExp(name + ".*\n(.*)", "gm");
+    console.log(answer);
 
+    
+}
 
 
 </script>
