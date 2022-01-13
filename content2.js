@@ -52,7 +52,7 @@ if(typeAnswer == 3){ // если типо вопроса 3, то ответ эт
             var answerFinal = document.querySelector("body > form > table > tbody > tr:nth-child(" + i + ") > td:nth-child(2)").textContent;
             
             if(answerFinal.trimStart() == answerFound.trimStart())
-                document.querySelector("body > form > table > tbody > tr:nth-child(" + i + ") > td:nth-child(2)").style.color = "red";
+                document.querySelector("body > form > table > tbody > tr:nth-child(" + i + ") > td:nth-child(2)").style.color = "grey";
     
           
         } catch (err) {
